@@ -5,6 +5,7 @@ Enabling the checklist based on Proposal of Inclusive Discrimination Act from Na
   * https://korea.assembly.go.kr:447/
 
 ## Checklist
+  * Gender
   * Disability
   * Age
   * Language
@@ -12,7 +13,8 @@ Enabling the checklist based on Proposal of Inclusive Discrimination Act from Na
   * Ethnicity
   * Nationality
   * Skin color
-  * Physical conditions
+  * Region
+  * Appearance
   * Marital status
   * Pregnancy or childbirth
   * Family and household
@@ -21,6 +23,7 @@ Enabling the checklist based on Proposal of Inclusive Discrimination Act from Na
   * Criminal record
   * Sexual orientation
   * Gender identity
+  * Educational background
   * Employment type
   * Medical history or health status
   * Social status
