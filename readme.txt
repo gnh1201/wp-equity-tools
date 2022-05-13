@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/catswords
 Tags: law, consent
 Requires at least: 5.1.12
 Tested up to: 5.1.12
-Stable tag: 
+Stable tag: 5.1.12
 Requires PHP: 5.3, 7.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -45,6 +45,7 @@ Enabling the checklist based on Proposal of Inclusive Discrimination Act from Na
 == Screenshots ==
 
 1. EquityTools in the editor
+2. EquityTools in the post
 
 == Changelog ==
 
