@@ -94,14 +94,14 @@ class EquityTools {
 
         $post_id = get_the_ID();
         $_meta_et_types = get_post_meta( $post_id, 'et_types' );
-        
+
         $et_types = array();
         if ($post_id) {
             $et_types = unserialize($_meta_et_types[0]);
         }
 
         if ($et_types !== false && count($et_types) > 0) {
-            $_contents .= '<p style="font-size: 16px; color: #767676; font-weight: bold;">This content includes topics related to: ';
+            $_contents .= '<p style="color: #767676; font-weight: bold;">This content includes topics related to: ';
             $_contents .= implode(', ', $et_types);
             $_contents .= '</p>';
         }
