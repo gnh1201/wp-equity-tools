@@ -53,4 +53,4 @@ Enabling the checklist based on Proposal of Inclusive Discrimination Act from Na
 Inital release
 
 = 0.2 =
-Add content filter
+Added content filter
