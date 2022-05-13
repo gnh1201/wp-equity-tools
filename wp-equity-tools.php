@@ -2,7 +2,7 @@
 /*
 * Plugin Name: EquityTools
 * Description: Enabling the checklist based on Proposal of Inclusive Discrimination Act from National Assembly of the Republic of Korea
-* Version: 0.2
+* Version: 0.2.1
 * Author: Catswords Research
 * Author URI: https://catswords.com
 */
