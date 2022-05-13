@@ -45,17 +45,29 @@ class EqulityTools {
         // nonce field for security check, you can have the same
         // nonce field for all your meta boxes of same plugin
         wp_nonce_field( plugin_basename( __FILE__ ), 'et_nonce' );
+		
+		$post_id = get_the_ID();
+		$_meta_et_types = get_post_meta( $post_id, 'et_types' );
+
+		$et_types = array();
+		if ($post_id) {
+			$et_types = unserialize($_meta_et_types[0]);
+        }
 
         echo '<p>Check all the topics that this content contains.</p>';
         echo '<ul>';
         foreach(self::$types as $type) {
-            echo '<li><label><input type="checkbox" name="et_types[]" value="' . $type . '" /> ' .$type . '</label></li>';
+            echo '<li><label><input type="checkbox" name="et_types[]" value="' . $type . '"';
+            if (in_array($type, $et_types)) {
+                echo ' checked="checked"';
+            }
+            echo '/> ' .$type . '</label></li>';
         }
         echo '</ul>';
         echo '</p>This checklist is based on <a href="https://www.lawmaking.go.kr/mob/nsmLmSts/out/2101116/detailR">Proposal of Inclusive Discrimination Act</a> from <a href="https://korea.assembly.go.kr:447/">National Assembly of the Republic of Korea</a></p>';
     }
     
-    public static function onRequest() {
+    public static function onRequest($post_id) {
         // check if this isn't an auto save
         if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
             return;
@@ -68,7 +80,9 @@ class EqulityTools {
         // for example particular user, role or maybe post type in case of custom post types
 
         // now store data in custom fields based on checkboxes selected
-        if ( isset( $_POST['et_types'] ) ) {
+		$et_types = $_POST['et_types'];
+
+        if ($et_types) {
             update_post_meta( $post_id, 'et_types', serialize($et_types) );
         } else {
             update_post_meta( $post_id, 'et_types', '' );
