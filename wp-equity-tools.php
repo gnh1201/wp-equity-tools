@@ -25,6 +25,7 @@ class EquityTools {
         "Criminal record",
         "Sexual orientation",
         "Gender identity",
+        "Educational background",
         "Employment type",
         "Medical history or health status",
         "Social status"
