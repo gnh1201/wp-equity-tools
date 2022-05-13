@@ -2,13 +2,14 @@
 /*
 * Plugin Name: EquityTools
 * Description: Enabling the checklist based on Proposal of Inclusive Discrimination Act from National Assembly of the Republic of Korea
-* Version: 0.2.1
+* Version: 0.2.2
 * Author: Catswords Research
 * Author URI: https://catswords.com
 */
 
 class EquityTools {
     private static $types = array(
+        "Gender",
         "Disability",
         "Age",
         "Language",
@@ -16,7 +17,8 @@ class EquityTools {
         "Ethnicity",
         "Nationality",
         "Skin color",
-        "Physical conditions",
+        "Region",
+        "Appearance",
         "Marital status",
         "Pregnancy or childbirth",
         "Family and household",
