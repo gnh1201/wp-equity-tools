@@ -1,13 +1,13 @@
 <?
 /*
-* Plugin Name: EqulityTools
+* Plugin Name: EquityTools
 * Description: Enabling the checklist based on Proposal of Inclusive Discrimination Act from National Assembly of the Republic of Korea
 * Version: 0.1
 * Author: Catswords Research
 * Author URI: https://catswords.com
 */
 
-class EqulityTools {
+class EquityTools {
     private static $types = array(
         "Disability",
         "Age",
@@ -90,5 +90,5 @@ class EqulityTools {
     }
 }
 
-add_action( 'add_meta_boxes', 'EqulityTools::onCreate' );
-add_action( 'save_post', 'EqulityTools::onRequest' );
+add_action( 'add_meta_boxes', 'EquityTools::onCreate' );
+add_action( 'save_post', 'EquityTools::onRequest' );
