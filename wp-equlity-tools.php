@@ -80,7 +80,7 @@ class EqulityTools {
         // for example particular user, role or maybe post type in case of custom post types
 
         // now store data in custom fields based on checkboxes selected
-		$et_types = $_POST['et_types'];
+        $et_types = $_POST['et_types'];
 
         if ($et_types) {
             update_post_meta( $post_id, 'et_types', serialize($et_types) );
