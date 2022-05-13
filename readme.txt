@@ -39,7 +39,7 @@ Enabling the checklist based on Proposal of Inclusive Discrimination Act from Na
   * Medical history or health status
   * Social status
 
-## Contant us
+== Contant us ==
   * support@exts.kr
 
 == Screenshots ==
