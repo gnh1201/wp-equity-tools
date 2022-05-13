@@ -1,4 +1,4 @@
-# wp-equlity-tools
+# wp-equity-tools
 Enabling the checklist based on Proposal of Inclusive Discrimination Act from National Assembly of the Republic of Korea (Wordpress plugin)
 
   * https://www.lawmaking.go.kr/mob/nsmLmSts/out/2101116/detailR
