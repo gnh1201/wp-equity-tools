@@ -88,7 +88,7 @@ class EquityTools {
             update_post_meta( $post_id, 'et_types', '' );
         }
     }
-    
+
     public static function afterContent($content) {
         $_contents = '';
 
@@ -100,13 +100,13 @@ class EquityTools {
             $et_types = unserialize($_meta_et_types[0]);
         }
 
-        $_contents .= $content;
-
         if ($et_types !== false && count($et_types) > 0) {
             $_contents .= '<p style="font-size: 16px; color: #767676; font-weight: bold;">This content includes topics related to: ';
             $_contents .= implode(', ', $et_types);
             $_contents .= '</p>';
         }
+
+        $_contents .= $content;
 
         return $_contents;
     }
