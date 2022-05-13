@@ -2,7 +2,7 @@
 /*
 * Plugin Name: EquityTools
 * Description: Enabling the checklist based on Proposal of Inclusive Discrimination Act from National Assembly of the Republic of Korea
-* Version: 0.1
+* Version: 0.2
 * Author: Catswords Research
 * Author URI: https://catswords.com
 */
@@ -33,8 +33,8 @@ class EquityTools {
     public static function onCreate() {
         add_meta_box(
             'et_meta_box',          // this is HTML id of the box on edit screen
-            'EqulityTools',    // title of the box
-            'EqulityTools::onDraw',   // function to be called to display the checkboxes, see the function below
+            'EquityTools',    // title of the box
+            'EquityTools::onDraw',   // function to be called to display the checkboxes, see the function below
             'post',        // on which edit screen the box should appear
             'normal',      // part of page where the box should appear
             'default'      // priority of the box
@@ -45,13 +45,13 @@ class EquityTools {
         // nonce field for security check, you can have the same
         // nonce field for all your meta boxes of same plugin
         wp_nonce_field( plugin_basename( __FILE__ ), 'et_nonce' );
-		
-		$post_id = get_the_ID();
-		$_meta_et_types = get_post_meta( $post_id, 'et_types' );
+        
+        $post_id = get_the_ID();
+        $_meta_et_types = get_post_meta( $post_id, 'et_types' );
 
-		$et_types = array();
-		if ($post_id) {
-			$et_types = unserialize($_meta_et_types[0]);
+        $et_types = array();
+        if ($post_id) {
+            $et_types = unserialize($_meta_et_types[0]);
         }
 
         echo '<p>Check all the topics that this content contains.</p>';
@@ -88,7 +88,30 @@ class EquityTools {
             update_post_meta( $post_id, 'et_types', '' );
         }
     }
+    
+    public static function afterContent($content) {
+        $_contents = '';
+
+        $post_id = get_the_ID();
+        $_meta_et_types = get_post_meta( $post_id, 'et_types' );
+        
+        $et_types = array();
+        if ($post_id) {
+            $et_types = unserialize($_meta_et_types[0]);
+        }
+
+        $_contents .= $content;
+
+        if ($et_types !== false && count($et_types) > 0) {
+            $_contents .= '<p style="font-size: 16px; color: #767676; font-weight: bold;">This content includes topics related to: ';
+            $_contents .= implode(', ', $et_types);
+            $_contents .= '</p>';
+        }
+
+        return $_contents;
+    }
 }
 
 add_action( 'add_meta_boxes', 'EquityTools::onCreate' );
 add_action( 'save_post', 'EquityTools::onRequest' );
+add_filter('the_content', 'EquityTools::afterContent');
